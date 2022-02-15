@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import '../styles/tasklist.scss';
 
@@ -33,14 +33,14 @@ export function TaskList() {
     const index = tasks.findIndex((task) => task.id === id);
     tasks[index].isComplete = !tasks[index].isComplete;
 
-    setTasks((rest) => [...rest]);
+    setTasks([...tasks]);
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
     const index = tasks.findIndex((task) => task.id === id);
     tasks.splice(index, 1);
-    setTasks((rest) => [...rest]);
+    setTasks([...tasks]);
   }
 
   return (
